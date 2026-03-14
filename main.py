@@ -1,6 +1,6 @@
 import asyncio
 from aiogram import Bot, Dispatcher
-from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton
+from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton,InlineKeyboardButton,InlineKeyboardMarkup
 from aiogram.filters import Command, CommandStart
 
 import os
@@ -9,9 +9,26 @@ load_dotenv()
 
 menu=ReplyKeyboardMarkup(
     keyboard=[
-        [KeyboardButton(text='salem'), KeyboardButton(text="alem")]
+        [KeyboardButton(text='salem'), KeyboardButton(text="alem")],
+        [KeyboardButton(text="Fanlar")],
     ],
     resize_keyboard=True
+)
+
+fanlar_menu = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [
+            InlineKeyboardButton(text='Algebra', callback_data="algebra"),
+            InlineKeyboardButton(text='Geometriya', callback_data="geometriya")
+        ],
+        [
+            InlineKeyboardButton(text='Fizika', callback_data="fizika"),
+            InlineKeyboardButton(text='Kimyo', callback_data="kimyo")
+        ],
+        [
+            InlineKeyboardButton(text='Orqaga', callback_data="back")
+        ]
+    ]
 )
 token=os.getenv("Token")
 bot = Bot(token=token)
@@ -23,6 +40,11 @@ async def start(messege:Message):
 async def help(messege:Message):
     await messege.answer("qanday jardem kerek? ")
 
+@dp.message()
+async def menular(message: Message):
+    t = message.text
+    if t == 'Fanlar':
+        await message.answer(f"tanlang ", reply_markup=fanlar_menu)
 
 
 async def main():
