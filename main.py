@@ -23,6 +23,9 @@ async def start(messege:Message):
 async def help(messege:Message):
     await messege.answer("qanday jardem kerek? ")
 
+@dp.message(Command("nnn"))
+async def nnn(messege:Message):
+    await messege.answer("newww ")
 
 
 async def main():
