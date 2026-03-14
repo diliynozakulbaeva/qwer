@@ -40,6 +40,10 @@ async def start(messege:Message):
 async def help(messege:Message):
     await messege.answer("qanday jardem kerek? ")
 
+@dp.message(Command('yordam'))   
+async def yordam(message: Message):
+    await message.answer("sizga qandayyordam kerak?")
+
 @dp.message()
 async def menular(message: Message):
     t = message.text
