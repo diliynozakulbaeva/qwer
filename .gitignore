@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / Python kernels
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+bin/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyCharm (JetBrains) sozlamalari
+.idea/
+*.iml
+*.iws
+
+# Virtual Environment (Virtual muhitlar)
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables (Maxfiy kalitlar)
+.env
+.flaskenv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# OS fayllari (Windows va macOS)
+.DS_Store
+Thumbs.db
